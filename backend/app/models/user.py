@@ -62,7 +62,7 @@ class User(Base):
     is_active: Mapped[bool] = mapped_column(
         Boolean,
         default=True,
-        server_default=text("1"),
+        server_default=text("true"),
         nullable=False,
     )
     created_at: Mapped[datetime] = mapped_column(
