@@ -1,0 +1,170 @@
+{
+  "freight_forecast_model": {
+    "model_name": "Ridge",
+    "version": "1.1.0",
+    "target": "Baltic Dry Index (BDI) Monthly Price",
+    "training_date_range": {
+      "start": "2002-01-01",
+      "end": "2026-08-01",
+      "total_observations": 296
+    },
+    "features": [
+      "lag_1",
+      "lag_2",
+      "lag_3",
+      "lag_6",
+      "lag_12",
+      "rolling_mean_3",
+      "rolling_mean_6",
+      "rolling_std_3",
+      "rolling_std_6",
+      "momentum_3",
+      "pct_change_1",
+      "bunker_lag_1",
+      "bunker_lag_2",
+      "bunker_rolling_mean_3",
+      "bunker_rolling_mean_6",
+      "bunker_pct_change_1",
+      "month",
+      "quarter",
+      "sin_month",
+      "cos_month"
+    ],
+    "feature_importances": {
+      "lag_1": 1.176,
+      "lag_2": -0.306,
+      "lag_3": -0.1595,
+      "lag_6": 0.1193,
+      "lag_12": -0.0097,
+      "rolling_mean_3": 0.2368,
+      "rolling_mean_6": -0.0805,
+      "rolling_std_3": -0.139,
+      "rolling_std_6": -0.059,
+      "momentum_3": -194.7431,
+      "pct_change_1": -218.8499,
+      "bunker_lag_1": -0.7168,
+      "bunker_lag_2": 1.6283,
+      "bunker_rolling_mean_3": -1.9831,
+      "bunker_rolling_mean_6": 0.8323,
+      "bunker_pct_change_1": 19.7048,
+      "month": -1.519,
+      "quarter": -7.0254,
+      "sin_month": -38.6539,
+      "cos_month": -68.6055
+    },
+    "model_hyperparameters": {
+      "alpha": 10.0,
+      "copy_X": true,
+      "fit_intercept": true,
+      "max_iter": null,
+      "positive": false,
+      "random_state": null,
+      "solver": "auto",
+      "tol": 0.0001
+    },
+    "validation_protocol": "Chronological Walk-Forward Expanding Window (5 splits)",
+    "candidate_models_evaluated": [
+      "Ridge",
+      "Linear_Regression",
+      "Random_Forest",
+      "Gradient_Boosting"
+    ],
+    "benchmark_comparison": {
+      "Naive_Persistence": {
+        "mean_mae": 405.6,
+        "mean_rmse": 554.86,
+        "mean_mape": 21.95,
+        "mean_r2": 0.604,
+        "mean_directional_accuracy": 0.0
+      },
+      "Seasonal_Naive": {
+        "mean_mae": 1271.5,
+        "mean_rmse": 1594.59,
+        "mean_mape": 71.53,
+        "mean_r2": -1.303,
+        "mean_directional_accuracy": 51.43
+      },
+      "Ridge": {
+        "mean_mae": 454.78,
+        "mean_rmse": 603.68,
+        "mean_mape": 27.93,
+        "mean_r2": 0.517,
+        "mean_directional_accuracy": 54.69
+      },
+      "Linear_Regression": {
+        "mean_mae": 477.79,
+        "mean_rmse": 622.75,
+        "mean_mape": 30.65,
+        "mean_r2": 0.452,
+        "mean_directional_accuracy": 55.51
+      },
+      "Random_Forest": {
+        "mean_mae": 636.22,
+        "mean_rmse": 885.87,
+        "mean_mape": 32.23,
+        "mean_r2": 0.307,
+        "mean_directional_accuracy": 52.24
+      },
+      "Gradient_Boosting": {
+        "mean_mae": 648.76,
+        "mean_rmse": 892.53,
+        "mean_mape": 33.3,
+        "mean_r2": 0.314,
+        "mean_directional_accuracy": 58.78
+      }
+    },
+    "selected_model_metrics": {
+      "mean_mae": 454.78,
+      "mean_rmse": 603.68,
+      "mean_mape": 27.93,
+      "mean_r2": 0.517,
+      "mean_directional_accuracy": 54.69
+    },
+    "last_known_bdi": 3186.0,
+    "last_known_date": "2026-08-01"
+  },
+  "candidate_models": {
+    "Naive_Persistence": {
+      "mean_mae": 405.6,
+      "mean_rmse": 554.86,
+      "mean_mape": 21.95,
+      "mean_r2": 0.604,
+      "mean_directional_accuracy": 0.0
+    },
+    "Seasonal_Naive": {
+      "mean_mae": 1271.5,
+      "mean_rmse": 1594.59,
+      "mean_mape": 71.53,
+      "mean_r2": -1.303,
+      "mean_directional_accuracy": 51.43
+    },
+    "Ridge": {
+      "mean_mae": 454.78,
+      "mean_rmse": 603.68,
+      "mean_mape": 27.93,
+      "mean_r2": 0.517,
+      "mean_directional_accuracy": 54.69
+    },
+    "Linear_Regression": {
+      "mean_mae": 477.79,
+      "mean_rmse": 622.75,
+      "mean_mape": 30.65,
+      "mean_r2": 0.452,
+      "mean_directional_accuracy": 55.51
+    },
+    "Random_Forest": {
+      "mean_mae": 636.22,
+      "mean_rmse": 885.87,
+      "mean_mape": 32.23,
+      "mean_r2": 0.307,
+      "mean_directional_accuracy": 52.24
+    },
+    "Gradient_Boosting": {
+      "mean_mae": 648.76,
+      "mean_rmse": 892.53,
+      "mean_mape": 33.3,
+      "mean_r2": 0.314,
+      "mean_directional_accuracy": 58.78
+    }
+  }
+}
